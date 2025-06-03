@@ -1,0 +1,205 @@
+:root {
+  --cor-primaria: #8B0000;
+  --cor-secundaria: #fff8f0;
+  --cor-texto: #333;
+  --cor-branca: #ffffff;
+  --cor-borda: #ddd;
+  --fonte-principal: 'Playfair Display', serif;
+
+  --espacamento: 1.5rem;
+  --radius: 6px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fonte-principal);
+  background-color: var(--cor-secundaria);
+  color: var(--cor-texto);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 10%;
+  display: block;
+}
+
+h1, h2, h3 {
+  color: var(--cor-primaria);
+  margin-bottom: 0.5rem;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-top: 1rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+header {
+  background-color: var(--cor-primaria);
+  color: var(--cor-branca);
+  padding: var(--espacamento);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo {
+  height: 50px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+nav a {
+  color: var(--cor-branca);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ffd700; /* dourado */
+}
+
+
+main {
+  padding: 2rem;
+}
+
+.apresentacao {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.apresentacao img {
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+}
+
+.itens-cardapio, .pratos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.item, .prato {
+  background-color: var(--cor-branca);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--radius);
+  padding: 1rem;
+  flex: 1 1 calc(50% - 1.5rem);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.item:hover, .prato:hover {
+  transform: scale(1.02);
+}
+
+.item span, .prato span {
+  display: block;
+  font-weight: bold;
+  color: var(--cor-primaria);
+  margin-top: 0.5rem;
+}
+
+/* ===========================
+   FORMULÁRIO CONTATO
+=========================== */
+form {
+  max-width: 600px;
+  margin-bottom: 2rem;
+}
+
+form label {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--radius);
+  font-family: inherit;
+}
+
+button {
+  background-color: var(--cor-primaria);
+  color: var(--cor-branca);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #a10000;
+}
+
+/* ===========================
+   INFO CONTATO
+=========================== */
+.info-contato p {
+  margin-bottom: 0.5rem;
+}
+
+/* ===========================
+   RODAPÉ
+=========================== */
+footer {
+  background-color: #222;
+  color: var(--cor-branca);
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: var(--cor-branca);
+  text-decoration: underline;
+}
+
+/* ===========================
+   RESPONSIVO
+=========================== */
+@media (max-width: 768px) {
+  .item, .prato {
+    flex: 1 1 100%;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
